@@ -1,6 +1,6 @@
 #配列の要素数
 n = int(input())
-#配列
+#配列[A_1 A_2 ... A_n]の入力を想定
 A = list(map(int, input().split()))
 
 def insertion_sort(A, n):

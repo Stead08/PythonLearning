@@ -1,0 +1,23 @@
+#n：要素数
+n = int(input())
+#A:ソートする数列
+A = list(map(int, input().split()))
+
+def selection_sort(A, n):
+    for i in range(n-1):
+        # A[i] ~ A[n-1] の最小値を見つけ、A[i]と交換する
+        # つまり、整列済みとなっている A[0] ~ A[i-1] の末尾に、A[i] ~ A[n-1] の最小値を付け加える
+        
+        # A[i] ~ A[n-1] の最小値の位置を保存する変数 min_index を用意
+        # 暫定的に A[i] を最小値とする
+        min_index = i
+        #最小値を探す
+        for j in range(i+1, n):
+            if A[j] < A[min_index]:
+                min_index = j
+        #A[i] と A[min_index]を交換
+        A[i], A[min_index] = A[min_index], A[i]
+        # A[0] ~ A[i] が整列済みになった
+        print(*A)
+        
+selection_sort(A,n)

@@ -1,3 +1,4 @@
+#二項間漸化式
 #初項x, 交差dのk項目の値を求める
 x, d, k = map(int, input().split())
 A = [x] * (k + 1)

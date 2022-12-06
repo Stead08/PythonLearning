@@ -1,4 +1,4 @@
-#最長増加部分列
+#最長増加部分列,Longest Increasing Subsequence
 #数列の長さn
 n = int(input())
 #数列a

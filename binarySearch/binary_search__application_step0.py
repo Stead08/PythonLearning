@@ -10,12 +10,12 @@ left, right = 0, 10001
 for _ in range(100):
     mid = (left + right) / 2
     num_of_pipes = 0
-    for a in A:
+    for a in A: #一本ずつmid(cm)で何本切り出せるか計算する
         num_of_pipes += a // mid
 
-    if num_of_pipes < k:
-        right = mid
+    if num_of_pipes < k: #もし合わせてk本切り出せなかったら
+        right = mid #上限をmidにしてもう一度二部探索
     else:
-        left = mid
+        left = mid　#もしk本切り出せたら、下限をmidにしてより長いパイプを切り出せないか探索する
 
 print(left)

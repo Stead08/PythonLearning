@@ -1,6 +1,7 @@
 #https://paiza.jp/works/mondai/bfs_dfs_problems/bfs_dfs_problems__three_length
+#木における幅優先探索での探索
 from collections import deque
-#頂点の数 N と、頂点番号 X 
+#頂点の数 N と、頂点番号 X, 移動距離L 
 N, X = map(int, input().split())
 #入力からグラフ（ツリー）を作成
 graph = [[] for _ in range(N)]
@@ -20,7 +21,7 @@ while q:
         if l[nxt] == -1:
             l[nxt] = l[prev] + 1
             q.append(nxt)
-#移動回数３で行くことができる頂点を出力
+#移動回数Lで行くことができる頂点を出力
 for i in range(N):
     if l[i] == 3:
         print(i + 1)

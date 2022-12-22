@@ -4,13 +4,15 @@
 #切り出すことができるなら、y ≦ mid を満たすすべての y について長さ y のパイプを k 本切り出せることがわかるため、探索範囲の左端を left から mid にします。
 #逆に切り出すことができないならば、y >= mid を満たすすべての y について長さ y のパイプを k 本切り出せないことがわかるため、探索範囲の右端を right から mid にします。
 
+#最大何m切り出せるかを計算
 A = [int(x) for x in input().split()]
-
+#切り出す長さを0, 10000mで設定
 left, right = 0, 10001
+#100二部探索する
 for _ in range(100):
     mid = (left + right) / 2
     num_of_pipes = 0
-    for a in A: #一本ずつmid(cm)で何本切り出せるか計算する
+    for a in A: #"""一本ずつ"""mid(cm)で何本切り出せるか計算する
         num_of_pipes += a // mid
 
     if num_of_pipes < k: #もし合わせてk本切り出せなかったら

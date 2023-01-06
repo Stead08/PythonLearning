@@ -13,6 +13,7 @@ for i in range(n-1):
 
 q = deque()
 q.append(r-1)
+#根から各頂点の距離はありうる最大の値（今回は木が一直線上だった場合の距離n）で初期化する
 dist = [n] * n
 dist[r-1] = 0
 #幅優先探索で根から各頂点までの距離を求める
@@ -20,7 +21,10 @@ while q:
     now = q.popleft()
     for nxt in g[now]:
         if dist[nxt] == n:
+            #まだ探索されていない頂点だった場合
+            # 今いる頂点から一つ先に存在する
             dist[nxt] = dist[now] + 1
+            # 子がいる可能性があるのでキューに入れる
             q.append(nxt)
 # a_i が b_i の親である場合は "A" を、b_i が a_i の親である場合は "B" を出力            
 for i in range(n-1):

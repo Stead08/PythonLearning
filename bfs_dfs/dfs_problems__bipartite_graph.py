@@ -3,7 +3,7 @@ import sys
 
 sys.setrecursionlimit(10 ** 6)
 
-
+# 色が塗られていない全ての頂点を色 2(1) で塗る。彩色済みの頂点は、その色が 2(1) である場合操作を継続する。1(2) である場合、操作を中断する。
 def dfs(now: int, num: int):
     color[now] = num
     for i in range(len(graph[now])):

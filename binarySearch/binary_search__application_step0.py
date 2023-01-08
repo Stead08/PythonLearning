@@ -19,6 +19,7 @@ for _ in range(100):
     if num_of_pipes < k: #もし合わせてk本切り出せなかったら
         right = mid #上限をmidにしてもう一度二部探索
     else:
-        left = mid　#もしk本切り出せたら、下限をmidにしてより長いパイプを切り出せないか探索する
+        # もしk本切り出せたら、下限をmidにしてより長いパイプを切り出せないか探索する
+        left = mid
 
 print(left)
